@@ -9,6 +9,8 @@ using UnityEngine.Serialization;
 public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [FormerlySerializedAs("color")] public GameColors[] colors;
+    public Sprite idle;
+    public Sprite hanged;
     public GameObject shadow;
     public bool dragOnSurfaces = true;
     public Ease fallEase = Ease.OutBounce;
