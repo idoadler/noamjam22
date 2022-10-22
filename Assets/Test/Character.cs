@@ -3,6 +3,7 @@ using Test;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 //[RequireComponent(typeof(Image))]
@@ -22,12 +23,15 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private float _myHeight;
     private float _shadowHeight;
     private Collider2D _collider2D;
+    private Animator _animator;
+    private Image _image;
 
     private void Start()
     {
         _myHeight = transform.position.y;
         _shadowHeight = shadow.transform.position.y;
         _collider2D = GetComponent<Collider2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -43,6 +47,7 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
         _collider2D.enabled = false;
         _isDragging = true;
+        _image.sprite = hanged;
         
         SetDraggedPosition(eventData);
     }
@@ -67,12 +72,20 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             rt.rotation = _mDraggingPlane.rotation;
             if (transform.position.y < _myHeight)
                 transform.position = new Vector2(transform.position.x, _myHeight);
+            if (transform.position.y > Screen.height * 0.9) 
+                transform.position = new Vector2(transform.position.x, Screen.height * 0.9f);
+            if (transform.position.x < Screen.width * 0.05) 
+                transform.position = new Vector2(Screen.width * 0.05f, transform.position.y);
+            if (transform.position.x > Screen.width * 0.95) 
+                transform.position = new Vector2(Screen.width * 0.95f, transform.position.y);
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         _isDragging = false;
+        _image.sprite = idle;
+        
         _collider2D.enabled = true; Debug.Log("ttt");
         Tween myTween = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
         //myTween.onComplete += () => { };
@@ -103,5 +116,10 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("PLAYER TRIGGER");
+    }
+
+    public void hitWall(Vector2 direction)
+    {
+        throw new System.NotImplementedException();
     }
 }
