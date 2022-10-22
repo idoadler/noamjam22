@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Test;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,6 +11,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public GameColors[] color;
     public GameObject shadow;
     public bool dragOnSurfaces = true;
+    public Ease fallEase = Ease.OutBounce;
+    public float fallTime = 1;
 
     // private GameObject m_DraggingIcon;
     private bool isDragging = false;
@@ -21,6 +24,11 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     {
         myHeight = transform.position.y;
         shadowHeight = shadow.transform.position.y;
+    }
+
+    private void Update()
+    {
+        shadow.transform.position = new Vector2(shadow.transform.position.x, shadowHeight);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -53,14 +61,14 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             rt.position = globalMousePos;
             rt.rotation = m_DraggingPlane.rotation;
             if (transform.position.y < myHeight)
-                transform.position = new Vector2(transform.position.x, myHeight);            
-            shadow.transform.position = new Vector2(shadow.transform.position.x, shadowHeight);
+                transform.position = new Vector2(transform.position.x, myHeight);
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
+        transform.DOMoveY(myHeight, fallTime).SetEase(fallEase);
     }
 
     static public T FindInParents<T>(GameObject go) where T : Component
