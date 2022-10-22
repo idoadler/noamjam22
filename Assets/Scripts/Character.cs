@@ -27,6 +27,7 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private Animator _animator;
     private static readonly int Drag = Animator.StringToHash("OnDrag");
     private static readonly int OnRelease = Animator.StringToHash("OnRelease");
+    private static readonly int OnComplete = Animator.StringToHash("OnComplete");
 
     private void Start()
     {
@@ -123,5 +124,10 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("PLAYER TRIGGER");
+    }
+
+    public void Dance()
+    {
+        _animator.SetTrigger(OnComplete);
     }
 }

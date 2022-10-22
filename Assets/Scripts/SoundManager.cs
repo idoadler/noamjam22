@@ -15,8 +15,12 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         if (_instance != null && _instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
         _instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
@@ -26,9 +30,9 @@ public class SoundManager : MonoBehaviour
         music.Play();
     }
 
-    private void playSfx(AudioClip clip)
+    private void playSfx(AudioClip clip, bool force=false)
     {
-        if(sfx.isPlaying)
+        if(sfx.isPlaying && !force)
             return;
         sfx.clip = clip;
         sfx.Play();
@@ -42,5 +46,10 @@ public class SoundManager : MonoBehaviour
     public static void PlayThump()
     {
         _instance.playSfx(_instance.thumpCorrect);
+    }
+
+    public static void PlayWin()
+    {
+        _instance.playSfx(_instance.winLevel, true);
     }
 }

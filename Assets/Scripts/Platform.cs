@@ -14,7 +14,12 @@ public class Platform : MonoBehaviour
     
     private bool _playingAnim = false;
     private int _currentCollisions = 0;
-    
+
+    private void Start()
+    {
+        GameManager.SignPlatform(maximumAllowed);
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         var character = col.GetComponent<Character>();
@@ -29,6 +34,7 @@ public class Platform : MonoBehaviour
                 return;
             }
         }
+        GameManager.AddCorrect();
         SoundManager.PlayThump();
         if (!_playingAnim)
         {
@@ -46,6 +52,10 @@ public class Platform : MonoBehaviour
         {
             _currentCollisions--;
             counter.text = $"{_currentCollisions}/{maximumAllowed}";
+            if (character.colors.All(testCol => color != testCol))
+            {
+                GameManager.RemoveCorrect();
+            }
         }
     }
 
