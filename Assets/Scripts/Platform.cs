@@ -24,10 +24,12 @@ public class Platform : MonoBehaviour
             counter.text = $"{_currentCollisions}/{maximumAllowed}";
             if (character.colors.Any(testCol => color == testCol))
             {
+                SoundManager.PlayThumpSame();
                 Debug.Log("Same Color");
                 return;
             }
         }
+        SoundManager.PlayThump();
         if (!_playingAnim)
         {
             _playingAnim = true;            

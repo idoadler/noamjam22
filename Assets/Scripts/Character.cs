@@ -88,13 +88,12 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         _isDragging = false;
-        image.sprite = idle;
         
         _collider2D.enabled = true; 
         Tween myTween = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
         myTween.onComplete += () =>
         {
-            
+            image.sprite = idle;
             _animator.SetTrigger(OnRelease);
         };
     }
@@ -124,10 +123,5 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("PLAYER TRIGGER");
-    }
-
-    public void hitWall(Vector2 direction)
-    {
-        throw new System.NotImplementedException();
     }
 }

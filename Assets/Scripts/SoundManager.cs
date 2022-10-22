@@ -25,4 +25,22 @@ public class SoundManager : MonoBehaviour
         music.clip = backgroundMusic;
         music.Play();
     }
+
+    private void playSfx(AudioClip clip)
+    {
+        if(sfx.isPlaying)
+            return;
+        sfx.clip = clip;
+        sfx.Play();
+    }
+    
+    public static void PlayThumpSame()
+    {
+        _instance.playSfx(_instance.thumpWrong);
+    }
+
+    public static void PlayThump()
+    {
+        _instance.playSfx(_instance.thumpCorrect);
+    }
 }
