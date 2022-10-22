@@ -90,7 +90,7 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         _isDragging = false;
         image.sprite = idle;
         
-        _collider2D.enabled = true; Debug.Log("ttt");
+        _collider2D.enabled = true; 
         Tween myTween = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
         myTween.onComplete += () =>
         {
@@ -98,8 +98,8 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             _animator.SetTrigger(OnRelease);
         };
     }
-    
-    static public T FindInParents<T>(GameObject go) where T : Component
+
+    private static T FindInParents<T>(GameObject go) where T : Component
     {
         if (go == null) return null;
         var comp = go.GetComponent<T>();
