@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 248758491950652915}
   - component: {fileID: 3302431847222222683}
   - component: {fileID: 5897169248679711218}
+  - component: {fileID: 3557639809204428290}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -52,9 +53,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648a88c454467af4f94e398309155f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 00000000
+  colors: 00000000
+  idle: {fileID: 21300000, guid: 57e92a0cf03d53245bf5639e5e5e65ea, type: 3}
+  hanged: {fileID: 21300000, guid: 57e92a0cf03d53245bf5639e5e5e65ea, type: 3}
   shadow: {fileID: 5045218900744380018}
+  image: {fileID: 4703530829142497939}
   dragOnSurfaces: 1
+  fallEase: 30
+  fallTime: 1
 --- !u!70 &3302431847222222683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -91,7 +97,26 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!95 &3557639809204428290
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541396606512888435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bb3411ce4f19ae49b6d0064cf9c3ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4398031754400782442
 GameObject:
   m_ObjectHideFlags: 0
