@@ -17,7 +17,8 @@ public class Platform : MonoBehaviour
 
     private void Start()
     {
-        GameManager.SignPlatform(maximumAllowed);
+        counter.text = $"{_currentCollisions}/{maximumAllowed}";
+        GameManager.SignPlatform(this);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -35,13 +36,13 @@ public class Platform : MonoBehaviour
         // Different color
         _currentCollisions++;
         counter.text = $"{_currentCollisions}/{maximumAllowed}";
-        GameManager.AddCorrect();
+        GameManager.TestCorrect();
         SoundManager.PlayThump();
         if (!_playingAnim)
         {
             _playingAnim = true;            
             shinyObject.Play();
-            Invoke(nameof(animDone), shinyObject.effectPlayer.duration + shinyObject.effectPlayer.initialPlayDelay);
+            Invoke(nameof(AnimDone), shinyObject.effectPlayer.duration + shinyObject.effectPlayer.initialPlayDelay);
         }
     }
 
@@ -54,17 +55,17 @@ public class Platform : MonoBehaviour
             {
                 _currentCollisions--;
                 counter.text = $"{_currentCollisions}/{maximumAllowed}";
-                GameManager.RemoveCorrect();
             }
         }
     }
 
-    private void printTime(float time)
-    {
-        Debug.Log(time);
-    }
-    private void animDone()
+    private void AnimDone()
     {
         _playingAnim = false;
+    }
+
+    public bool IsCorrect()
+    {
+        return _currentCollisions == maximumAllowed;
     }
 }

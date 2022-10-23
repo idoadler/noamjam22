@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,21 +13,24 @@ public class GameManager : MonoBehaviour
     public LevelsOrder levelsObj;
     public Transform levelRoot;
     public GameObject completeMessage;
+    public GameObject blinkMessage;
+    public TextMeshProUGUI levelName;
 
-    private int needed = -1;
+    private List<Platform> _platforms = new List<Platform>();
 
     private void Awake()
     {
         if (_instance != null && _instance != this)
             Destroy(_instance);
         _instance = this;
-        needed = -1;
     }
 
     private void Start()
     {
+        levelName.text = "Level " + (currentLevel + 1);
         confetti.Pause();
         completeMessage.SetActive(false);
+        blinkMessage.SetActive(false);
         Instantiate(levelsObj.levels[currentLevel], levelRoot);
     }
 
@@ -32,6 +38,11 @@ public class GameManager : MonoBehaviour
     {
         currentLevel++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void BlinkMessage()
+    {
+        blinkMessage.SetActive(true);
     }
 
     public static void WinGame()
@@ -42,29 +53,18 @@ public class GameManager : MonoBehaviour
         {
             character.Dance();
         }
-        _instance.Invoke(nameof(GoToNextScene), 5);
+        _instance.Invoke(nameof(BlinkMessage), 3);
         _instance.confetti.Play();
     }
 
-    public static void SignPlatform(int maximumAllowed)
+    public static void SignPlatform(Platform p)
     {
-        if (_instance.needed < 0)
-            _instance.needed = maximumAllowed;
-        else if (_instance.needed == 0)
-            Debug.LogWarning("Should never happen");
-        else
-            _instance.needed += maximumAllowed;
+        _instance._platforms.Add(p);
     }
 
-    public static void AddCorrect()
+    public static void TestCorrect()
     {
-        _instance.needed--;
-        if(_instance.needed == 0)
+        if(_instance._platforms.All(p => p.IsCorrect()))
             WinGame();
-    }
-    
-    public static void RemoveCorrect()
-    {
-        _instance.needed++;
     }
 }

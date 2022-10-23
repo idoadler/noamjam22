@@ -62,7 +62,6 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnDrag(PointerEventData data)
     {
-        //if (m_DraggingIcon != null)
         if (_isDragging)
             SetDraggedPosition(data);
     }
@@ -129,6 +128,8 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void Dance()
     {
+        if(_fallAnim != null && _fallAnim.IsPlaying())
+            _fallAnim.Complete();
         _animator.SetTrigger(OnComplete);
     }
 }
