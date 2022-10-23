@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem confetti;
     public LevelsOrder levelsObj;
     public Transform levelRoot;
+    public GameObject completeMessage;
 
     private int needed = -1;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         confetti.Pause();
+        completeMessage.SetActive(false);
         Instantiate(levelsObj.levels[currentLevel], levelRoot);
     }
 
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     public static void WinGame()
     {
+        _instance.completeMessage.SetActive(true);
         SoundManager.PlayWin();
         foreach (var character in FindObjectsOfType<Character>())
         {

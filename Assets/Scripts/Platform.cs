@@ -27,11 +27,12 @@ public class Platform : MonoBehaviour
         {
             if (character.colors.Any(testCol => color == testCol))
             {
+                // Same color
                 SoundManager.PlayThumpSame();
-                Debug.Log("Same Color");
                 return;
             }
         }
+        // Different color
         _currentCollisions++;
         counter.text = $"{_currentCollisions}/{maximumAllowed}";
         GameManager.AddCorrect();
@@ -42,7 +43,6 @@ public class Platform : MonoBehaviour
             shinyObject.Play();
             Invoke(nameof(animDone), shinyObject.effectPlayer.duration + shinyObject.effectPlayer.initialPlayDelay);
         }
-        Debug.Log("PLATFORM TRIGGER");
     }
 
     private void OnTriggerExit2D(Collider2D col)

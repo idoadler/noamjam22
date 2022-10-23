@@ -653,6 +653,7 @@ MonoBehaviour:
   confetti: {fileID: 282551879}
   levelsObj: {fileID: 11400000, guid: 0b4559b2fb2385f4baa71dfb0e4eac10, type: 2}
   levelRoot: {fileID: 1391948685}
+  completeMessage: {fileID: 135087085}
 --- !u!4 &1232766604
 Transform:
   m_ObjectHideFlags: 0

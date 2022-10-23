@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 
 //[RequireComponent(typeof(Image))]
-public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [FormerlySerializedAs("color")] public GameColors[] colors;
     public Sprite idle;
@@ -125,16 +125,6 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             t = t.parent;
         }
         return comp;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("PointerDown");
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("PLAYER TRIGGER");
     }
 
     public void Dance()
