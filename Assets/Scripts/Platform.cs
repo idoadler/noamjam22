@@ -25,8 +25,6 @@ public class Platform : MonoBehaviour
         var character = col.GetComponent<Character>();
         if ( character != null)
         {
-            _currentCollisions++;
-            counter.text = $"{_currentCollisions}/{maximumAllowed}";
             if (character.colors.Any(testCol => color == testCol))
             {
                 SoundManager.PlayThumpSame();
@@ -34,6 +32,8 @@ public class Platform : MonoBehaviour
                 return;
             }
         }
+        _currentCollisions++;
+        counter.text = $"{_currentCollisions}/{maximumAllowed}";
         GameManager.AddCorrect();
         SoundManager.PlayThump();
         if (!_playingAnim)
@@ -50,10 +50,10 @@ public class Platform : MonoBehaviour
         var character = col.GetComponent<Character>();
         if (character != null)
         {
-            _currentCollisions--;
             counter.text = $"{_currentCollisions}/{maximumAllowed}";
             if (character.colors.All(testCol => color != testCol))
             {
+                _currentCollisions--;
                 GameManager.RemoveCorrect();
             }
         }

@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 248758491950652915, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: hanged
       value: 
-      objectReference: {fileID: 21300000, guid: 721059796ebd60542a457da3bbcd8042, type: 3}
+      objectReference: {fileID: 21300000, guid: 893749d46d5690f4b9e66907964b67ae, type: 3}
     - target: {fileID: 248758491950652915, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: colors.Array.size
       value: 2
@@ -49,19 +49,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_SizeDelta.x
