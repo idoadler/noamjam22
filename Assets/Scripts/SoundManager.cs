@@ -5,6 +5,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource music;
     public AudioSource sfx;
 
+    public AudioClip menuMusic;
     public AudioClip backgroundMusic;
     public AudioClip thumpWrong;
     public AudioClip thumpCorrect;
@@ -51,5 +52,11 @@ public class SoundManager : MonoBehaviour
     public static void PlayWin()
     {
         _instance.playSfx(_instance.winLevel, true);
+    }
+
+    public static void SetMute(bool mute)
+    {
+        _instance.music.mute = mute;
+        _instance.sfx.mute = mute;
     }
 }

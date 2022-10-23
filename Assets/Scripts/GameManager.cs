@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     private static int currentLevel = 0;
 
+    public string lastLevel;
     public ParticleSystem confetti;
     public LevelsOrder levelsObj;
     public Transform levelRoot;
@@ -37,7 +38,13 @@ public class GameManager : MonoBehaviour
     public void GoToNextScene()
     {
         currentLevel++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (currentLevel < levelsObj.levels.Length)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else
+        {
+            currentLevel = 0;
+            SceneManager.LoadScene(lastLevel);
+        }
     }
 
     private void BlinkMessage()
@@ -53,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             character.Dance();
         }
-        _instance.Invoke(nameof(BlinkMessage), 3);
+        _instance.Invoke(nameof(BlinkMessage), 2);
         _instance.confetti.Play();
     }
 

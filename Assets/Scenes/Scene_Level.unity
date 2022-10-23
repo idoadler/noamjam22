@@ -995,6 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d945c197d654d1a816c3b62641b9233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastLevel: Scene_EndScreen
   confetti: {fileID: 282551879}
   levelsObj: {fileID: 11400000, guid: 0b4559b2fb2385f4baa71dfb0e4eac10, type: 2}
   levelRoot: {fileID: 1391948685}

@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 3405795043210138796}
   sfx: {fileID: 7746480184443398449}
+  menuMusic: {fileID: 8300000, guid: fbdf29968397c0d4bbb8006b6aa413d7, type: 3}
   backgroundMusic: {fileID: 8300000, guid: c0d04d7eb48e8cc4dab01130876ff1d1, type: 3}
   thumpWrong: {fileID: 8300000, guid: bc6f79a6a26bb1b4eb8d9e347e8f052d, type: 3}
   thumpCorrect: {fileID: 8300000, guid: bc6f79a6a26bb1b4eb8d9e347e8f052d, type: 3}
