@@ -1,15 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    private int needed = -1;
+    private static int currentLevel = 0;
 
-    //public GameObject confetti;
-    public string nextScene;
     public ParticleSystem confetti;
+    public LevelsOrder levelsObj;
+    public Transform levelRoot;
+
+    private int needed = -1;
 
     private void Awake()
     {
@@ -22,11 +23,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         confetti.Pause();
+        Instantiate(levelsObj.levels[currentLevel], levelRoot);
     }
 
     public void GoToNextScene()
     {
-        SceneManager.LoadScene(nextScene);
+        currentLevel++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public static void WinGame()
