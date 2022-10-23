@@ -650,14 +650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d945c197d654d1a816c3b62641b9233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Scene_Level
   confetti: {fileID: 282551879}
-  levels:
-  - {fileID: 4654131057147109056, guid: 72b1b3cc82e8a4a45b59b76b045ae409, type: 3}
-  - {fileID: 2231345097645125592, guid: 34a8a9d80f14aa34fba394da9a3c4212, type: 3}
-  - {fileID: 405423316953740364, guid: 805c004510b19c64cabd1c749b644271, type: 3}
-  - {fileID: 6333941468235422225, guid: 9ddd73751176f524ba2beeba2049be9b, type: 3}
-  - {fileID: 1818136761218615392, guid: 2542eb3ee7ce71540ad6b94443c02fd4, type: 3}
+  levelsObj: {fileID: 11400000, guid: 0b4559b2fb2385f4baa71dfb0e4eac10, type: 2}
   levelRoot: {fileID: 1391948685}
 --- !u!4 &1232766604
 Transform:
