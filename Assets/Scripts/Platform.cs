@@ -50,10 +50,10 @@ public class Platform : MonoBehaviour
         var character = col.GetComponent<Character>();
         if (character != null)
         {
-            counter.text = $"{_currentCollisions}/{maximumAllowed}";
             if (character.colors.All(testCol => color != testCol))
             {
                 _currentCollisions--;
+                counter.text = $"{_currentCollisions}/{maximumAllowed}";
                 GameManager.RemoveCorrect();
             }
         }

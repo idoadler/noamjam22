@@ -28,6 +28,7 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private static readonly int Drag = Animator.StringToHash("OnDrag");
     private static readonly int OnRelease = Animator.StringToHash("OnRelease");
     private static readonly int OnComplete = Animator.StringToHash("OnComplete");
+    private Tween _fallAnim;
 
     private void Start()
     {
@@ -49,6 +50,8 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         if (canvas == null)
             return;
 
+        if(_fallAnim != null && _fallAnim.IsPlaying())
+            _fallAnim.Complete();
         _collider2D.enabled = false;
         _isDragging = true;
         image.sprite = hanged;
@@ -88,15 +91,23 @@ public class Character : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _isDragging = false;
-        
         _collider2D.enabled = true; 
-        Tween myTween = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
-        myTween.onComplete += () =>
+        _isDragging = false;
+        image.sprite = idle;
+
+        if (Mathf.Abs(transform.position.y - _myHeight) < 0.1)
         {
-            image.sprite = idle;
+            transform.position = new Vector2(transform.position.x, _myHeight);
             _animator.SetTrigger(OnRelease);
-        };
+        }
+        else
+        {
+            _fallAnim = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
+            _fallAnim.onComplete += () =>
+            {
+                _animator.SetTrigger(OnRelease);
+            };
+        }
     }
 
     private static T FindInParents<T>(GameObject go) where T : Component
