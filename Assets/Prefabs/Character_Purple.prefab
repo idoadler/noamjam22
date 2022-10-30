@@ -27,6 +27,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Purple
       objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.x
+      value: 50.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.y
+      value: 152.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Offset.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.85
+      objectReference: {fileID: 0}
     - target: {fileID: 4703530829142497939, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_Sprite
       value: 

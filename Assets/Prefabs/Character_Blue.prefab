@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.x
+      value: 62.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.y
+      value: 166.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Offset.y
+      value: -6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7096864113964716724, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

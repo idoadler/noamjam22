@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_MixBluePurple
       objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.x
+      value: 56.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302431847222222683, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
+      propertyPath: m_Size.y
+      value: 167.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4703530829142497939, guid: 6999f339738ef6e4d8b3b9039864ccda, type: 3}
       propertyPath: m_Sprite
       value: 
