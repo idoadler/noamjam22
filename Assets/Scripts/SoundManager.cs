@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     
     private void Awake()
     {
+        //Rigidbody rb;
+        //rb.
         if (_instance != null && _instance != this)
         {
             Destroy(gameObject);

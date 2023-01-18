@@ -1198,7 +1198,6 @@ RectTransform:
   - {fileID: 7348679990069805089}
   - {fileID: 7348679991214201228}
   - {fileID: 2355173758336691850}
-  - {fileID: 1514391557}
   - {fileID: 2355173758128756732}
   - {fileID: 2355173759994480274}
   - {fileID: 2355173758448162931}
@@ -1206,6 +1205,7 @@ RectTransform:
   - {fileID: 2355173758319374785}
   - {fileID: 2355173759165395754}
   - {fileID: 2355173758985283042}
+  - {fileID: 1514391557}
   - {fileID: 1526798396}
   - {fileID: 908530212}
   - {fileID: 1830025747}
@@ -1247,7 +1247,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 8
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2316,7 +2316,7 @@ RectTransform:
   - {fileID: 681985503649827857}
   - {fileID: 6136741117296786723}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2337,7 +2337,7 @@ RectTransform:
   - {fileID: 681985503594871680}
   - {fileID: 6136741117241936562}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2358,7 +2358,7 @@ RectTransform:
   - {fileID: 681985503915433405}
   - {fileID: 6136741117562580111}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2400,7 +2400,7 @@ RectTransform:
   - {fileID: 681985504047346703}
   - {fileID: 6136741117694346557}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2421,7 +2421,7 @@ RectTransform:
   - {fileID: 681985504581339550}
   - {fileID: 6136741118228363436}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2442,7 +2442,7 @@ RectTransform:
   - {fileID: 681985502549974870}
   - {fileID: 6136741116196990564}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2463,7 +2463,7 @@ RectTransform:
   - {fileID: 681985503311964910}
   - {fileID: 6136741116959103964}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3433,6 +3433,7 @@ GameObject:
   - component: {fileID: 2355173758985283042}
   - component: {fileID: 4729244454779792037}
   - component: {fileID: 8326351757669902676}
+  - component: {fileID: 7032011269249125670}
   m_Layer: 5
   m_Name: Character_Blue
   m_TagString: Untagged
@@ -3440,6 +3441,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011269249125670
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011269249125669}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011269785727156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3451,6 +3468,7 @@ GameObject:
   - component: {fileID: 2355173758448162931}
   - component: {fileID: 4729244454242670388}
   - component: {fileID: 8326351758207046853}
+  - component: {fileID: 7032011269785727157}
   m_Layer: 5
   m_Name: Character_MixBluePurple
   m_TagString: Untagged
@@ -3458,6 +3476,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011269785727157
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011269785727156}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011269925394694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,6 +3503,7 @@ GameObject:
   - component: {fileID: 2355173758319374785}
   - component: {fileID: 4729244454382452358}
   - component: {fileID: 8326351758335688055}
+  - component: {fileID: 7032011269925394695}
   m_Layer: 5
   m_Name: Character_MixRedPurple
   m_TagString: Untagged
@@ -3476,6 +3511,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011269925394695
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011269925394694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011269942675021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,6 +3558,7 @@ GameObject:
   - component: {fileID: 2355173758054522989}
   - component: {fileID: 4729244454637563690}
   - component: {fileID: 8326351758617472219}
+  - component: {fileID: 7032011270214224043}
   m_Layer: 5
   m_Name: Character_MixGreenRed
   m_TagString: Untagged
@@ -3514,6 +3566,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011270214224043
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011270214224042}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011270271729467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,6 +3593,7 @@ GameObject:
   - component: {fileID: 2355173758128756732}
   - component: {fileID: 4729244454560929979}
   - component: {fileID: 8326351758559845194}
+  - component: {fileID: 7032011270271729468}
   m_Layer: 5
   m_Name: Character_Purple
   m_TagString: Untagged
@@ -3532,6 +3601,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011270271729468
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011270271729467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011270526742101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,6 +3628,7 @@ GameObject:
   - component: {fileID: 2355173759994480274}
   - component: {fileID: 4729244453775854037}
   - component: {fileID: 8326351758808074788}
+  - component: {fileID: 7032011270526742102}
   m_Layer: 5
   m_Name: Character_Red
   m_TagString: Untagged
@@ -3550,6 +3636,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011270526742102
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011270526742101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011271325031405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3663,7 @@ GameObject:
   - component: {fileID: 2355173759165395754}
   - component: {fileID: 4729244453533842541}
   - component: {fileID: 8326351759654092700}
+  - component: {fileID: 7032011271325031406}
   m_Layer: 5
   m_Name: Character_Blue (1)
   m_TagString: Untagged
@@ -3568,6 +3671,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011271325031406
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011271325031405}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!224 &7246175093987884754
 RectTransform:
   m_ObjectHideFlags: 0

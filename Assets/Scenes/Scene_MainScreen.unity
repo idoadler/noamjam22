@@ -1078,8 +1078,8 @@ RectTransform:
   - {fileID: 7348679991166869474}
   - {fileID: 7348679990069805089}
   - {fileID: 7348679991214201228}
-  - {fileID: 2355173758336691850}
   - {fileID: 1514391557}
+  - {fileID: 2355173758336691850}
   - {fileID: 2355173758128756732}
   - {fileID: 2355173759994480274}
   - {fileID: 2355173758985283042}
@@ -1129,7 +1129,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1737,7 +1737,7 @@ RectTransform:
   - {fileID: 681985503931663094}
   - {fileID: 6136741117578818500}
   m_Father: {fileID: 1391948685}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2473,6 +2473,7 @@ GameObject:
   - component: {fileID: 2355173758985283042}
   - component: {fileID: 4729244454779792037}
   - component: {fileID: 8326351757669902676}
+  - component: {fileID: 7032011269249125670}
   m_Layer: 5
   m_Name: Character_Blue
   m_TagString: Untagged
@@ -2480,6 +2481,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011269249125670
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011269249125669}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011269942675021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2508,7 @@ GameObject:
   - component: {fileID: 2355173758336691850}
   - component: {fileID: 4729244454366208461}
   - component: {fileID: 8326351758351950396}
+  - component: {fileID: 7032011269942675022}
   m_Layer: 5
   m_Name: Character_Green
   m_TagString: Untagged
@@ -2498,6 +2516,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011269942675022
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011269942675021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011270271729467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2543,7 @@ GameObject:
   - component: {fileID: 2355173758128756732}
   - component: {fileID: 4729244454560929979}
   - component: {fileID: 8326351758559845194}
+  - component: {fileID: 7032011270271729468}
   m_Layer: 5
   m_Name: Character_Purple
   m_TagString: Untagged
@@ -2516,6 +2551,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011270271729468
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011270271729467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &7032011270526742101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,6 +2578,7 @@ GameObject:
   - component: {fileID: 2355173759994480274}
   - component: {fileID: 4729244453775854037}
   - component: {fileID: 8326351758808074788}
+  - component: {fileID: 7032011270526742102}
   m_Layer: 5
   m_Name: Character_Red
   m_TagString: Untagged
@@ -2534,6 +2586,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!70 &7032011270526742102
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032011270526742101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!224 &7246175093987884754
 RectTransform:
   m_ObjectHideFlags: 0

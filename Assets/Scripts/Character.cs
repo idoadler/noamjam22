@@ -13,7 +13,7 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     public Sprite idle;
     public Sprite hanged;
     public GameObject shadow;
-    public Image image;
+    public SpriteRenderer image;
     public bool dragOnSurfaces = true;
     public Ease fallEase = Ease.OutBounce;
     public float fallTime = 1;
@@ -30,12 +30,18 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     private static readonly int OnComplete = Animator.StringToHash("OnComplete");
     private Tween _fallAnim;
 
-    private void Start()
+    private void Awake()
     {
-        _myHeight = transform.position.y;
         _shadowHeight = shadow.transform.position.y;
         _collider2D = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        _myHeight = transform.position.y;
+        transform.position = new Vector2(transform.position.x, Screen.height);
+        OnEndDrag(null);
     }
 
     private void Update()
@@ -46,6 +52,8 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log(eventData.pointerDrag.name);
+        
         var canvas = FindInParents<Canvas>(gameObject);
         if (canvas == null)
             return;
@@ -94,14 +102,16 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         _isDragging = false;
         image.sprite = idle;
 
-        if (Mathf.Abs(transform.position.y - _myHeight) < 0.1)
+        var normalizedHeight = 2 * (transform.position.y - _myHeight) / Screen.height; 
+        
+        if (normalizedHeight < 0.1)
         {
             transform.position = new Vector2(transform.position.x, _myHeight);
             _animator.SetTrigger(OnRelease);
         }
         else
         {
-            _fallAnim = transform.DOMoveY(_myHeight, fallTime).SetEase(fallEase);
+            _fallAnim = transform.DOMoveY(_myHeight, normalizedHeight * fallTime).SetEase(fallEase);
             _fallAnim.onComplete += () =>
             {
                 _animator.SetTrigger(OnRelease);
