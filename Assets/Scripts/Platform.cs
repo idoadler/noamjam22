@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Coffee.UIEffects;
 using Test;
@@ -21,7 +20,7 @@ public class Platform : MonoBehaviour
         GameManager.SignPlatform(this);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter(Collider col)
     {
         var character = col.GetComponent<Character>();
         if ( character != null)
@@ -46,7 +45,7 @@ public class Platform : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerExit(Collider col)
     {
         var character = col.GetComponent<Character>();
         if (character != null)

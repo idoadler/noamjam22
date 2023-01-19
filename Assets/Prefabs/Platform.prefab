@@ -245,9 +245,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990300872047052983}
-  - component: {fileID: 408475948}
   - component: {fileID: 408475949}
-  - component: {fileID: 931295179302270250}
+  - component: {fileID: 204626519188757117}
   m_Layer: 5
   m_Name: Platform
   m_TagString: Untagged
@@ -276,32 +275,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 522, y: 636}
   m_Pivot: {x: 0.5, y: 0}
---- !u!61 &408475948
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5631355503041546648}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -6.4, y: 514.69}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 350, y: 300}
-  m_EdgeRadius: 0
 --- !u!114 &408475949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,35 +291,16 @@ MonoBehaviour:
   color: 0
   counter: {fileID: 3262081701981624993}
   shinyObject: {fileID: 2955581714752008405}
---- !u!60 &931295179302270250
-PolygonCollider2D:
+--- !u!65 &204626519188757117
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5631355503041546648}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -227.27, y: 388.44}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 132.54767, y: 205.54706}
-      - {x: 0, y: 1}
-      - {x: -0.9510498, y: 0.309021}
-      - {x: -0.5877991, y: -0.809021}
-      - {x: 0.5877838, y: -0.809021}
-      - {x: 276.00412, y: 1.2463074}
-      - {x: 401.56488, y: 210.5473}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 400, y: 300, z: 200}
+  m_Center: {x: 0, y: 481.23, z: 42.391853}

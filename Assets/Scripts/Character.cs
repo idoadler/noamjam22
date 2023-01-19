@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 
 //[RequireComponent(typeof(Image))]
-public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class Character : MonoBehaviour, IDragHandler//, IBeginDragHandler, IEndDragHandler
 {
     [FormerlySerializedAs("color")] public GameColors[] colors;
     public Sprite idle;
@@ -23,7 +23,7 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     private RectTransform _mDraggingPlane;
     private float _myHeight;
     private float _shadowHeight;
-    private Collider2D _collider2D;
+    private Collider _collider;
     private Animator _animator;
     private static readonly int Drag = Animator.StringToHash("OnDrag");
     private static readonly int OnRelease = Animator.StringToHash("OnRelease");
@@ -34,7 +34,7 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     {
         _myHeight = transform.position.y;
         _shadowHeight = shadow.transform.position.y;
-        _collider2D = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
     }
 
@@ -44,24 +44,26 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         shadow.transform.position = new Vector2(shadow.transform.position.x, _shadowHeight);
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void TTOnBeginDrag()
     {
+        Debug.Log("1" + name);
         var canvas = FindInParents<Canvas>(gameObject);
         if (canvas == null)
             return;
 
         if(_fallAnim != null && _fallAnim.IsPlaying())
             _fallAnim.Complete();
-        _collider2D.enabled = false;
+        _collider.enabled = false;
         _isDragging = true;
         image.sprite = hanged;
         _animator.SetTrigger(Drag);
         
-        SetDraggedPosition(eventData);
+        //SetDraggedPosition(eventData);
     }
 
     public void OnDrag(PointerEventData data)
     {
+        Debug.Log("2" + name);
         if (_isDragging)
             SetDraggedPosition(data);
     }
@@ -88,9 +90,10 @@ public class Character : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void TTOnEndDrag()
     {
-        _collider2D.enabled = true; 
+        Debug.Log("3" + name);
+        _collider.enabled = true; 
         _isDragging = false;
         image.sprite = idle;
 
